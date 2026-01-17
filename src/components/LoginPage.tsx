@@ -4,7 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import Logo from './Logo';
 
 export default function LoginPage() {
-  const [usuario, setUsuario] = useState('rector');
+  const [usuario, setUsuario] = useState('');
   const [contrasena, setContrasena] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -52,8 +52,9 @@ export default function LoginPage() {
                   value={usuario}
                   onChange={(e) => setUsuario(e.target.value)}
                   className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1b6b2f] focus:border-transparent transition-all"
-                  placeholder="rector"
+                  placeholder="Usuario"
                   autoComplete="username"
+                  required
                 />
               </div>
             </div>
@@ -71,6 +72,7 @@ export default function LoginPage() {
                   className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1b6b2f] focus:border-transparent transition-all"
                   placeholder="••••••"
                   autoComplete="current-password"
+                  required
                 />
               </div>
             </div>
@@ -89,16 +91,6 @@ export default function LoginPage() {
               {loading ? 'Iniciando sesión...' : 'Iniciar sesión'}
             </button>
           </form>
-
-          <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
-            <p className="text-xs text-gray-600">
-              <span className="font-semibold text-[#1b6b2f]">Credenciales de prueba:</span>
-              <br />
-              Usuario: <code className="text-xs bg-white px-2 py-1 rounded">rector</code>
-              <br />
-              Contraseña: <code className="text-xs bg-white px-2 py-1 rounded">1234</code>
-            </p>
-          </div>
         </div>
       </div>
     </div>

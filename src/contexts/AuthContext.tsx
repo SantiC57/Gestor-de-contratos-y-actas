@@ -38,11 +38,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return false;
       }
 
-      // Si la función devuelve un resultado, el login es exitoso
-      setIsLoggedIn(true);
-      setUsuario(inputUsuario);
-      localStorage.setItem('rectorSession', inputUsuario);
-      return true;
+      // Verificar el campo 'exito' que devuelve la función
+      const resultado = data[0];
+      if (resultado && resultado.exito === true) {
+        setIsLoggedIn(true);
+        setUsuario(inputUsuario);
+        localStorage.setItem('rectorSession', inputUsuario);
+        return true;
+      }
+
+      return false;
     } catch {
       return false;
     }
@@ -56,39 +61,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const changePassword = async (newUsuario: string, newContrasena: string): Promise<boolean> => {
     try {
-      // Primero intentamos usar la función RPC si existe
-      const { error: rpcError } = await supabase
+      const { data, error } = await supabase
         .rpc('actualizar_credenciales', {
           p_usuario_actual: usuario,
           p_nuevo_usuario: newUsuario,
           p_nueva_contrasena: newContrasena
         });
 
-      if (!rpcError) {
+      if (error) {
+        console.error('Error updating credentials:', error);
+        return false;
+      }
+
+      if (data && data.length > 0 && data[0].exito) {
         setUsuario(newUsuario);
         localStorage.setItem('rectorSession', newUsuario);
         return true;
       }
 
-      // Si la función RPC no existe, usar update directo
-      const { data, error } = await supabase
-        .from('usuarios_rector')
-        .update({ 
-          usuario: newUsuario, 
-          contrasena: newContrasena,
-          updated_at: new Date().toISOString()
-        })
-        .eq('usuario', usuario)
-        .select();
-
-      if (error || !data || data.length === 0) {
-        console.error('Error updating credentials:', error);
-        return false;
-      }
-
-      setUsuario(newUsuario);
-      localStorage.setItem('rectorSession', newUsuario);
-      return true;
+      return false;
     } catch (err) {
       console.error('Error in changePassword:', err);
       return false;

@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1b6b2f;
+  --color-primary-dark: #0d4620;
+}
 
 @keyframes slide-in {
   from {

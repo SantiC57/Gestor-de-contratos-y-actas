@@ -36,12 +36,12 @@ Skills para frameworks y librerías frontend.
 
 | Skill | Descripción | Trigger |
 |-------|-------------|---------|
-| [react-19](.opencode/skills/react-19) | React 19 patterns con React Compiler | `react`, `react 19`, `componente react`, `use client` |
-| [nextjs-15](.opencode/skills/nextjs-15) | Next.js 15 App Router patterns | `nextjs`, `next.js`, `next 15`, `app router`, `server action` |
-| [tailwind-4](.opencode/skills/tailwind-4) | Tailwind CSS 4 patterns | `tailwind`, `tailwindcss`, `estilos`, `css` |
-| [typescript](.opencode/skills/typescript) | TypeScript strict patterns | `typescript`, `ts`, `tipos`, `interfaces` |
-| [zod-4](.opencode/skills/zod-4) | Zod 4 schema validation | `zod`, `validación`, `schemas`, `parse` |
-| [zustand-5](.opencode/skills/zustand-5) | Zustand 5 state management | `zustand`, `state management`, `store react` |
+| [react-19](.opencode/skill/react-19) | React 19 patterns con React Compiler | `react`, `react 19`, `componente react`, `use client` |
+| [nextjs-15](.opencode/skill/nextjs-15) | Next.js 15 App Router patterns | `nextjs`, `next.js`, `next 15`, `app router`, `server action` |
+| [tailwind-4](.opencode/skill/tailwind-4) | Tailwind CSS 4 patterns | `tailwind`, `tailwindcss`, `estilos`, `css` |
+| [typescript](.opencode/skill/typescript) | TypeScript strict patterns | `typescript`, `ts`, `tipos`, `interfaces` |
+| [zod-4](.opencode/skill/zod-4) | Zod 4 schema validation | `zod`, `validación`, `schemas`, `parse` |
+| [zustand-5](.opencode/skill/zustand-5) | Zustand 5 state management | `zustand`, `state management`, `store react` |
 
 ---
 
@@ -49,8 +49,8 @@ Skills para frameworks y librerías frontend.
 
 | Skill | Descripción | Trigger |
 |-------|-------------|---------|
-| [ai-sdk-5](.opencode/skills/ai-sdk-5) | Vercel AI SDK 5 patterns | `ai sdk`, `ai-sdk`, `chat ai`, `streaming` |
-| [django-drf](.opencode/skills/django-drf) | Django REST Framework patterns | `django`, `drf`, `rest api`, `viewset`, `serializer` |
+| [ai-sdk-5](.opencode/skill/ai-sdk-5) | Vercel AI SDK 5 patterns | `ai sdk`, `ai-sdk`, `chat ai`, `streaming` |
+| [django-drf](.opencode/skill/django-drf) | Django REST Framework patterns | `django`, `drf`, `rest api`, `viewset`, `serializer` |
 
 ---
 
@@ -58,8 +58,8 @@ Skills para frameworks y librerías frontend.
 
 | Skill | Descripción | Trigger |
 |-------|-------------|---------|
-| [playwright](.opencode/skills/playwright) | Playwright E2E testing | `playwright`, `e2e`, `end to end`, `browser testing` |
-| [pytest](.opencode/skills/pytest) | Python pytest patterns | `pytest`, `tests python`, `testing`, `fixtures` |
+| [playwright](.opencode/skill/playwright) | Playwright E2E testing | `playwright`, `e2e`, `end to end`, `browser testing` |
+| [pytest](.opencode/skill/pytest) | Python pytest patterns | `pytest`, `tests python`, `testing`, `fixtures` |
 
 ---
 
@@ -67,8 +67,8 @@ Skills para frameworks y librerías frontend.
 
 | Skill | Descripción | Trigger |
 |-------|-------------|---------|
-| [jira-task](.opencode/skills/jira-task) | Jira task creation | `jira task`, `crear tarea`, `nueva tarea`, `ticket` |
-| [jira-epic](.opencode/skills/jira-epic) | Jira epic creation | `jira epic`, `crear epic`, `epic grande`, `iniciativa` |
+| [jira-task](.opencode/skill/jira-task) | Jira task creation | `jira task`, `crear tarea`, `nueva tarea`, `ticket` |
+| [jira-epic](.opencode/skill/jira-epic) | Jira epic creation | `jira epic`, `crear epic`, `epic grande`, `iniciativa` |
 
 ---
 
@@ -76,8 +76,8 @@ Skills para frameworks y librerías frontend.
 
 | Skill | Descripción | Trigger |
 |-------|-------------|---------|
-| [skill-creator](.opencode/skills/skill-creator) | Create new skills | `crear skill`, `new skill`, `agregar skill`, `agent skill` |
-| [pr-review](.opencode/skills/pr-review) | GitHub PR review | `review pr`, `revisar pr`, `check pr`, `pr url` |
+| [skill-creator](.opencode/skill/skill-creator) | Create new skill | `crear skill`, `new skill`, `agregar skill`, `agent skill` |
+| [pr-review](.opencode/skill/pr-review) | GitHub PR review | `review pr`, `revisar pr`, `check pr`, `pr url` |
 
 ---
 
@@ -107,7 +107,7 @@ Sistema de memoria para persistencia entre sesiones.
 
 ### Activar Skills
 
-Los skills se cargan automáticamente cuando el contexto detecta el trigger correspondiente. También puedes activarlos manualmente:
+Los skill se cargan automáticamente cuando el contexto detecta el trigger correspondiente. También puedes activarlos manualmente:
 
 ```
 /sdd:init                    → Inicializa SDD

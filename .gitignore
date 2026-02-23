@@ -20,5 +20,4 @@ dist-ssr
 *.sln
 *.sw?
 .env
-.opencode
 .bolt

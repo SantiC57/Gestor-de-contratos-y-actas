@@ -1,20 +1,99 @@
-# Agentes y Skills Disponibles
+# Gentleman-Skills (Local)
 
-Este documento lista todos los agentes y skills disponibles en el proyecto con sus respectivos triggers de activación.
+> Skills disponibles para el proyecto Gestor de Contratos y Actas.
+
+Skills son conjuntos de instrucciones especializadas que enseñan al asistente de IA cómo trabajar con frameworks, librerías y patrones específicos.
+
+## Philosophy
+
+- **Patrones locales** - Skills configurados específicamente para este proyecto.
+- **SDD (Spec-Driven Development)** - Metodología de gestión de cambios.
+- **Engram** - Sistema de memoria para persistencia entre sesiones.
+
+---
+
+## SDD (Spec-Driven Development)
+
+Gestión de cambios siguiendo la metodología SDD.
+
+| Skill | Descripción | Trigger |
+|-------|-------------|---------|
+| [sdd-init](.opencode/skills/sdd-init) | Inicializa SDD en el proyecto | `/sdd:init`, `sdd init`, `iniciar sdd` |
+| [sdd-explore](.opencode/skills/sdd-explore) | Explora e investiga ideas | `/sdd:explore`, `sdd explore` |
+| [sdd-propose](.opencode/skills/sdd-propose) | Crea propuesta de cambio | `/sdd:new`, `sdd new <name>` |
+| [sdd-spec](.opencode/skills/sdd-spec) | Escribe especificaciones | `/sdd:spec`, `sdd spec` |
+| [sdd-design](.opencode/skills/sdd-design) | Crea diseño técnico | `/sdd:design`, `sdd design` |
+| [sdd-tasks](.opencode/skills/sdd-tasks) | Lista de tareas de implementación | `/sdd:tasks`, `sdd tasks` |
+| [sdd-apply](.opencode/skills/sdd-apply) | Implementa el código | `/sdd:apply`, `sdd apply` |
+| [sdd-verify](.opencode/skills/sdd-verify) | Verifica la implementación | `/sdd:verify`, `sdd verify` |
+| [sdd-archive](.opencode/skills/sdd-archive) | Archiva el cambio completado | `/sdd:archive`, `sdd archive` |
+
+---
+
+## Frontend
+
+Skills para frameworks y librerías frontend.
+
+| Skill | Descripción | Trigger |
+|-------|-------------|---------|
+| [react-19](.opencode/skills/react-19) | React 19 patterns con React Compiler | `react`, `react 19`, `componente react`, `use client` |
+| [nextjs-15](.opencode/skills/nextjs-15) | Next.js 15 App Router patterns | `nextjs`, `next.js`, `next 15`, `app router`, `server action` |
+| [tailwind-4](.opencode/skills/tailwind-4) | Tailwind CSS 4 patterns | `tailwind`, `tailwindcss`, `estilos`, `css` |
+| [typescript](.opencode/skills/typescript) | TypeScript strict patterns | `typescript`, `ts`, `tipos`, `interfaces` |
+| [zod-4](.opencode/skills/zod-4) | Zod 4 schema validation | `zod`, `validación`, `schemas`, `parse` |
+| [zustand-5](.opencode/skills/zustand-5) | Zustand 5 state management | `zustand`, `state management`, `store react` |
+
+---
+
+## Backend & AI
+
+| Skill | Descripción | Trigger |
+|-------|-------------|---------|
+| [ai-sdk-5](.opencode/skills/ai-sdk-5) | Vercel AI SDK 5 patterns | `ai sdk`, `ai-sdk`, `chat ai`, `streaming` |
+| [django-drf](.opencode/skills/django-drf) | Django REST Framework patterns | `django`, `drf`, `rest api`, `viewset`, `serializer` |
+
+---
+
+## Testing
+
+| Skill | Descripción | Trigger |
+|-------|-------------|---------|
+| [playwright](.opencode/skills/playwright) | Playwright E2E testing | `playwright`, `e2e`, `end to end`, `browser testing` |
+| [pytest](.opencode/skills/pytest) | Python pytest patterns | `pytest`, `tests python`, `testing`, `fixtures` |
+
+---
+
+## Project Management
+
+| Skill | Descripción | Trigger |
+|-------|-------------|---------|
+| [jira-task](.opencode/skills/jira-task) | Jira task creation | `jira task`, `crear tarea`, `nueva tarea`, `ticket` |
+| [jira-epic](.opencode/skills/jira-epic) | Jira epic creation | `jira epic`, `crear epic`, `epic grande`, `iniciativa` |
+
+---
+
+## Utilities
+
+| Skill | Descripción | Trigger |
+|-------|-------------|---------|
+| [skill-creator](.opencode/skills/skill-creator) | Create new skills | `crear skill`, `new skill`, `agregar skill`, `agent skill` |
+| [pr-review](.opencode/skills/pr-review) | GitHub PR review | `review pr`, `revisar pr`, `check pr`, `pr url` |
+
+---
 
 ## Memory System (Engram)
 
-El sistema de memoria **Engram** está disponible para guardar y recuperar información entre sesiones.
+Sistema de memoria para persistencia entre sesiones.
 
-### Triggers para Engram
+### Triggers
 
 | Comando | Descripción |
 |---------|-------------|
 | `guardar`, `save memory`, `record` | Guarda información importante en memoria |
-| `buscar`, `search memory`, `record` | Busca en la memoria existente |
+| `buscar`, `search memory` | Busca en la memoria existente |
 | `qué hicimos`, `what did we do` | Recupera el contexto de sesiones anteriores |
 
-### Funciones de Engram
+### Funciones Disponibles
 
 - `engram_mem_save` — Guardar observaciones importantes
 - `engram_mem_search` — Buscar en memoria
@@ -24,137 +103,11 @@ El sistema de memoria **Engram** está disponible para guardar y recuperar infor
 
 ---
 
-## SDD (Spec-Driven Development)
-
-Skills para gestión de cambios siguiendo la metodología SDD.
-
-| Skill | Trigger | Descripción |
-|-------|---------|-------------|
-| **sdd-init** | `/sdd:init`, `sdd init`, `iniciar sdd` | Inicializa SDD en el proyecto |
-| **sdd-explore** | `/sdd:explore`, `sdd explore` | Explora e investiga ideas |
-| **sdd-propose** | `/sdd:new`, `sdd new <name>` | Crea propuesta de cambio |
-| **sdd-spec** | `/sdd:spec`, `sdd spec` | Escribe especificaciones |
-| **sdd-design** | `/sdd:design`, `sdd design` | Crea diseño técnico |
-| **sdd-tasks** | `/sdd:tasks`, `sdd tasks` | Lista de tareas de implementación |
-| **sdd-apply** | `/sdd:apply`, `sdd apply` | Implementa el código |
-| **sdd-verify** | `/sdd:verify`, `sdd verify` | Verifica la implementación |
-| **sdd-archive** | `/sdd:archive`, `sdd archive` | Archiva el cambio completado |
-
----
-
-## Framework & Library Skills
-
-### React 19
-
-- **Trigger:** `react`, `react 19`, `componente react`, `use client`
-- **Descripción:** Patrones de React 19 con React Compiler
-- **Skill:** `react-19`
-
-### Next.js 15
-
-- **Trigger:** `nextjs`, `next.js`, `next 15`, `app router`, `server action`
-- **Descripción:** Patrones de Next.js 15 App Router
-- **Skill:** `nextjs-15`
-
-### Zustand 5
-
-- **Trigger:** `zustand`, `state management`, `store react`
-- **Descripción:** Patrones de gestión de estado con Zustand 5
-- **Skill:** `zustand-5`
-
-### Tailwind CSS 4
-
-- **Trigger:** `tailwind`, `tailwindcss`, `estilos`, `css`
-- **Descripción:** Patrones de Tailwind CSS 4
-- **Skill:** `tailwind-4`
-
-### TypeScript
-
-- **Trigger:** `typescript`, `ts`, `tipos`, `interfaces`
-- **Descripción:** Patrones y mejores prácticas de TypeScript strict
-- **Skill:** `typescript`
-
-### Zod 4
-
-- **Trigger:** `zod`, `validación`, `schemas`, `parse`
-- **Descripción:** Validación de esquemas con Zod 4 (cambios desde v3)
-- **Skill:** `zod-4`
-
-### Vercel AI SDK 5
-
-- **Trigger:** `ai sdk`, `ai-sdk`, `chat ai`, `streaming`
-- **Descripción:** Patrones de AI SDK 5 (cambios desde v4)
-- **Skill:** `ai-sdk-5`
-
----
-
-## Backend Skills
-
-### Django REST Framework
-
-- **Trigger:** `django`, `drf`, `rest api`, `viewset`, `serializer`
-- **Descripción:** Patrones de Django REST Framework
-- **Skill:** `django-drf`
-
-### pytest
-
-- **Trigger:** `pytest`, `tests python`, `testing`, `fixtures`
-- **Descripción:** Patrones de testing con pytest
-- **Skill:** `pytest`
-
----
-
-## Testing & Review
-
-### Playwright
-
-- **Trigger:** `playwright`, `e2e`, `end to end`, `browser testing`
-- **Descripción:** Patrones de testing E2E con Playwright
-- **Skill:** `playwright`
-
-### PR Review
-
-- **Trigger:** `review pr`, `revisar pr`, `check pr`, `pr url`
-- **Descripción:** Revisa Pull Requests en GitHub
-- **Skill:** `pr-review`
-
----
-
-## Project Management
-
-### Jira Task
-
-- **Trigger:** `jira task`, `crear tarea`, `nueva tarea`, `ticket`
-- **Descripción:** Crea tareas en Jira
-- **Skill:** `jira-task`
-
-### Jira Epic
-
-- **Trigger:** `jira epic`, `crear epic`, `epic grande`, `iniciativa`
-- **Descripción:** Crea epics para features grandes
-- **Skill:** `jira-epic`
-
----
-
-## Utilities
-
-### Skill Creator
-
-- **Trigger:** `crear skill`, `new skill`, `agregar skill`, `agent skill`
-- **Descripción:** Crea nuevos skills para el agente
-- **Skill:** `skill-creator`
-
-### Find Skills
-
-- **Trigger:** `buscar skill`, `find skill`, `existe skill`, `cómo hacer`
-- **Descripción:** Descubre e instala skills disponibles
-- **Skill:** `find-skills`
-
----
-
 ## Uso
 
-Para activar un skill, simplemente menciona el trigger en tu mensaje o usa el comando directo:
+### Activar Skills
+
+Los skills se cargan automáticamente cuando el contexto detecta el trigger correspondiente. También puedes activarlos manualmente:
 
 ```
 /sdd:init                    → Inicializa SDD
@@ -162,6 +115,30 @@ Para activar un skill, simplemente menciona el trigger en tu mensaje o usa el co
 /nextjs-15                   → Activa skill de Next.js
 /zustand-5                   → Activa skill de Zustand
 /tailwind-4                  → Activa skill de Tailwind
+/zod-4                       → Activa skill de Zod
 ```
 
-Los skills se cargan automáticamente cuando el contexto detecta el trigger correspondiente.
+### Estructura de un Skill
+
+```
+.opencode/skills/
+├── skill-name/
+│   └── SKILL.md          # Archivo principal del skill (requerido)
+```
+
+Cada skill contiene:
+1. **Trigger conditions** - Cuándo cargar el skill
+2. **Patterns and rules** - Convenciones de código a seguir
+3. **Code examples** - Implementaciones de referencia
+4. **Anti-patterns** - Qué evitar
+
+---
+
+## Referencias
+
+- [Gentleman-Skills](https://github.com/Gentleman-Programming/Gentleman-Skills) - Repositorio original de skills
+- [Engram](https://github.com/gentleman-programming/engram) - Sistema de memoria
+
+---
+
+Hecho para el proyecto Gestor de Contratos y Actas.
